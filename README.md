@@ -11,7 +11,6 @@ This repository provisions a highly available, secure, and scalable web applicat
 - **Private Subnets**: Host application servers (frontend) and load balancer.
 - **NAT Gateway**: Allows outbound internet access for private subnets.
 - **Security Groups**: Restrict traffic between tiers and from the internet.
-- **RDS (MySQL)**: Multi-AZ deployment for high availability.
 - **S3 Backend**: Stores Terraform state securely for team collaboration.
 
 ---
