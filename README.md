@@ -47,5 +47,42 @@ Modules/
 │   ├── lb.tf
 │   └── target-group.tf
 ```
+**Configure variables:**  
+Edit the `dev.tfvars` file to set your AWS region, CIDR blocks, for Dev environment-specific variables.
+Edit the `prod.tfvars` file to set your AWS region, CIDR blocks, for Prod environment-specific variables.
 
+---
 
+**Initialize Terraform:**
+
+```bash
+terraform init  
+```
+**Review the execution plan:**
+
+```bash
+terraform plan
+```
+***Apply the configuration for Dev env:**
+```bash
+terraform apply -var-file=dev.tfvars
+```
+***Apply the configuration for Prod env:**
+```bash
+terraform apply -var-file=prod.tfvars
+```
+
+## Inputs
+Configuration variables (editable in `terraform.tfvars`):
+
+- VPC and subnet CIDRs
+- Subnet-to-tier mapping
+
+---
+
+## Outputs
+Upon deployment, Terraform will output:
+
+- VPC ID
+- EC2 ID
+- Load balancer DNS
